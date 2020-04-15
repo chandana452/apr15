@@ -1,0 +1,66 @@
+ import java.util.Scanner;
+public class AlphaHealthCare{
+public static void main(String args[]){
+    System.out.println("Enter Gender:\n");
+    Scanner sc=new Scanner(System.in);//
+    String Gender=sc.nextLine();
+    System.out.println(Gender);
+    System.out.println("Enter location:\n");
+    String Location=sc.nextLine();
+    System.out.println(Location);
+    System.out.println("enter age:(enter age (for every 10 years reimbursement will be increased so enter age as 30, 40,... after 20 years)");
+    int Age=sc.nextInt();
+    System.out.println(Age);
+    double Fixed_Amount=100000;
+     double r=0;
+     double s=0;
+     
+    if(Age<=20){
+    if(Gender.equals("M")){
+    if(Location.equals("city")){
+        r=Fixed_Amount;
+        
+    }
+    else if(Location.equals("village")){
+        r=Fixed_Amount-25000;
+        }
+        System.out.println("reimbursement is: "+r);
+    }
+    if(Gender.equals("F")){
+    if(Location.equals("city")){
+        r=Fixed_Amount-(Fixed_Amount*20)/100;
+        
+    }
+    else if(Location.equals("village")){
+        r=(Fixed_Amount-25000)+((Fixed_Amount-25000)*15)/100;
+        }
+        System.out.println("reimbursement is: "+r);
+    }
+    
+    }
+    else if((Age-20)%10==0){
+        if(Gender.equals("M")){
+    if(Location.equals("city")){
+r=Fixed_Amount+(Fixed_Amount*(Age-20)/10)*0.1;
+    }
+    else if(Location.equals("village")){
+        r=(Fixed_Amount-25000)+((Fixed_Amount-25000)*(Age-20)/10)*0.1;
+        }
+        System.out.println("reimbursement is: "+r);
+    }
+ if(Gender.equals("F")){
+    if(Location.equals("city")){
+        r=(Fixed_Amount-(Fixed_Amount*20)/100);
+        s=r+r*((Age-20)/10)*0.1;
+    }
+    else if(Location.equals("village")){
+        r=(Fixed_Amount-25000)+((Fixed_Amount-25000)*15)/100;
+        s=r+r*((Age-20)/10)*0.1;
+        }
+        System.out.println("reimbursement is: "+s);
+    }
+        
+        
+    }
+}
+}
