@@ -1,0 +1,38 @@
+ import java.util.Scanner;
+public class BankAccount {
+
+	    public static void main(String[] args){
+	    System.out.println("Enter Current Balance:");
+	        Scanner sc=new Scanner(System.in);
+	        int balance=sc.nextInt();
+	        System.out.println(balance);
+	        System.out.println("Enter Transaction Type: WithDraw (WD)or Deposit(DP)");
+	            String wddp=sc.next();
+	            System.out.println(wddp); 
+	        System.out.println("Enter amount:");
+	        int amount=sc.nextInt();
+	        System.out.println(amount);           
+	            if(balance<=0){
+	                System.out.println("Insufficient Balance");
+	            }
+	            else{
+	                if(amount<=0){
+	                    System.out.println("Zero and Negative values for amount for both withdraw and deposit transactions should not accept");
+	                }
+	                else if(amount>balance){
+	                    System.out.println("Insufficient Balance");
+	                }
+	                else{
+	                if(wddp.equals("WD")){
+	                    System.out.println("With Draw Successful");
+	                }
+	                else if(wddp.equals("DP")){
+	                    System.out.println("Deposit Successful");
+	                }
+	                
+	                }
+	                
+	            }
+	        
+	    }
+	}
