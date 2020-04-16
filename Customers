@@ -1,0 +1,49 @@
+import java.util.Scanner;
+public class Customers{
+    public static void main(String[] args){
+        System.out.println("Enter Bill amount:");
+        Scanner sc=new Scanner(System.in);
+        int B_A=sc.nextInt();
+        System.out.println("$"+B_A);
+        System.out.println("Enter your buying items are Packaged food items or not:(Y/N)");
+        
+        String P_F=sc.next();
+        System.out.println(P_F);
+        System.out.println("Enter today date is your Birth date or not:(Y/N)");
+        String B_D=sc.next();
+        
+        System.out.println(B_D);
+        if(B_A<200){
+            System.out.println("No offers");
+        }
+        
+        else if(B_A>=200 && B_A<=500){
+            if(P_F.equals("N")){
+                if(B_D.equals("N")){
+                System.out.println("No Offers");
+                }
+                else if(B_D.equals("Y")){
+                System.out.println("Happy Birthday you got another 15% discount");
+            }
+            }
+            else if(P_F.equals("Y")){
+                if(B_D.equals("N")){
+                System.out.println("You offered wth 10% discount");
+            }
+            else if(B_D.equals("Y")){
+                System.out.println("Happy Birthday you got another 15% discount");
+            }
+            }
+            }
+            else if(B_A>500){
+            if(P_F.equals("Y")){
+                if(B_D.equals("N")){
+                System.out.println("You are offered with free delivery");
+                }
+                else if(B_D.equals("Y")){
+                System.out.println("Happy Birthday you got another 15% discount");
+          }
+            }
+            }
+}
+  }
