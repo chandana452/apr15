@@ -1,0 +1,45 @@
+import java.util.Scanner;
+public class Connection{
+    public static void main(String[] args){
+        System.out.println("Enter Name:");
+        Scanner sc=new Scanner(System.in);
+       String name=sc.next();
+       System.out.println(name);
+       System.out.println("Enter Package:(available package name are Gold, Normal, Silver, Platinum)");
+       String p=sc.next();
+       System.out.println(p);
+       System.out.println("Enter Setup box required or not(YES/NO:)");
+       String STB_Box=sc.next();
+       System.out.println(STB_Box);
+        float GST_PER=13;
+        float STB_price=0;
+        float P_amount=0;
+        float Gross_Price=0;
+        float Net_amount=0;
+        if(p.toUpperCase().equals("PLATINUM")){
+            P_amount=9000;
+        }
+       else if(p.toUpperCase().equals("NORMAL")){
+            P_amount=4000;
+        }
+        else if(p.toUpperCase().equals("SILVER")){
+            P_amount=6000;
+        }
+        else if(p.toUpperCase().equals("GOLD")){
+            P_amount=7500;
+        }
+        System.out.println(P_amount);
+         if(STB_Box.toUpperCase().equals("YES")){
+        STB_price=1500;
+        }
+        else if(STB_Box.toUpperCase().equals("NO")){
+        STB_price=0;
+        }
+
+        Gross_Price=P_amount+STB_price;
+        System.out.println("Gross Price (PackagePrice+STB Price) Rs."+Gross_Price);
+        System.out.println("GST(13% of Gross) Rs."+((Gross_Price)*13)/(float)100);
+        Net_amount=Gross_Price+((Gross_Price)*13)/(float)100;
+        System.out.println("Net Amount = Rs."+Net_amount);
+    }
+}
